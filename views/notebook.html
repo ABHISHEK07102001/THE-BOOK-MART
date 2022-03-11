@@ -1,0 +1,35 @@
+<main>
+
+  <div class="d-flex flex-wrap">
+    <div class="col" ng-repeat="data in myData | filter : myFilter">
+      <div class="card m-1" style="min-width: 12rem; max-width: 0rem;" >
+        <a class="text-dark text-decoration-none hover-zoom" href="#!/book{{data.bookId}}">
+          <img src="/image/notebook1.gif" class="card-img-top " alt="...">
+          <!-- <div class="bg-image">
+            <img src="/product_app/image/images.png" class="w-100" />
+          </div> -->
+        <div class="card-body">
+          <h5 class="card-title">{{data.bookName}}</h5>
+          <p class="card-text">{{data.description}}</p>
+        </div>
+        </a>
+
+        <div class="d-flex justify-content-between">
+          <div class="text-muted">
+            {{data.price | currency}}
+          </div>
+          <div class="">
+            <abbr class="text-decoration-none" title="Click to edit this details">
+              <input class="bg-warning text-white" type="button" ng-click="editDetail(data)" value="Edit">
+            </abbr>
+            <abbr class="text-decoration-none" title="after click this button lost this item permanently ">
+              <input class="bg-danger text-white" type="button" ng-click="removeItem($index)" value="Delete">
+            </abbr>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+</main>

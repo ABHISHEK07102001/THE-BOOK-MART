@@ -1,0 +1,156 @@
+<main class="container-fluid content-wrapper">
+
+    <div class="row content-header">
+        <div class="col-md-12">
+            <h1 class="text-center">ADD BOOK LIST</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-10 col-lg-8">
+                <div class="card card-primary card-outline">
+                    <div class="card-header bg-dark">
+                        <h5 class="custom-secondary-color text-white">Fill Book Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <form name="newBookForm" novalidate>
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="row mb-2">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="bookid"><span class="text-red">*</span>Book Id:
+                                                    <!-- {{ newBookForm.bid.$touched }} -->
+                                                </label>
+                                                <input 
+                                                type="text" 
+                                                class="form-control"
+                                                ng-class="{'is-invalid': newBookForm.bookid.$touched && newBookForm.bookid.$invalid }"
+                                                name="bookid" 
+                                                ng-model="newBook.bookid" 
+                                                placeholder="e.g-115759"
+                                                required />
+                                                <div class="invalid-feedback">
+                                                    Please enter Book Id here!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="bname"><span class="text-red">*</span>Book Name:
+                                                     <!-- {{newBookForm.bname.$touched }} -->
+                                                    </label>
+                                                <input 
+                                                type="text" 
+                                                class="form-control"
+                                                ng-class="{'is-invalid': newBookForm.bname.$touched && newBookForm.bname.$invalid }"
+                                                name="bname" 
+                                                ng-model="newBook.bname" 
+                                                placeholder="e.g-My Journey"
+                                                required />
+                                                <div class="invalid-feedback">
+                                                    Please enter Book Name here!
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label for="pic"><span class="text-red">*</span>Book Image: 
+                                                    
+                                                </label>
+                                                <input 
+                                                type="file"
+                                                class="form-control"
+                                                ng-class="{'is-invalid': newBookForm.pic.$touched && newBookForm.pic.$invalid }"
+                                                name="pic" 
+                                                ng-model="newBook.pic"                       
+                                                required />
+                                                <div class="invalid-feedback">
+                                                    Please Upload Image!
+                                                </div>
+                                            </div>
+                                        </div> -->
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <!-- <img class="profile-user-img img-fluid" style="width: 120px" src="/product_app/image/book2.jpg" alt="pic" /> -->
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="aname"><span class="text-red">*</span>Author name: 
+                                            <!-- {{newBookForm.aname.$touched }} -->
+                                        </label>
+                                        <input 
+                                        type="text" 
+                                        class="form-control"
+                                        ng-class="{'is-invalid': newBookForm.aname.$touched && newBookForm.aname.$invalid }"
+                                        name="aname" 
+                                        ng-model="newBook.aname" 
+                                        placeholder="e.g-Dr. A.P.J. Abdul Kalam"
+                                        required />
+                                        <div class="invalid-feedback">
+                                            Please enter Author Name here!
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="description"><span class="text-red">*</span>description: 
+                                            <!-- {{newBookForm.aname.$touched }} -->
+                                        </label>
+                                        <input 
+                                        type="text" 
+                                        class="form-control"
+                                        ng-class="{'is-invalid': newBookForm.description.$touched && newBookForm.description.$invalid }"
+                                        name="description" 
+                                        ng-model="newBook.description" 
+                                        placeholder="e.g-Transforming Dreams Into Actions"
+                                        required />
+                                        <div class="invalid-feedback">
+                                            Please enter description here!
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="price"><span class="text-red">*</span>price: 
+                                            <!-- {{newBookForm.aname.$touched }} -->
+                                        </label>
+                                        <input 
+                                        type="number" 
+                                        class="form-control"
+                                        ng-class="{'is-invalid': newBookForm.price.$touched && newBookForm.price.$invalid }"
+                                        name="price" 
+                                        ng-model="newBook.price" 
+                                        placeholder="e.g-119(in rs)."
+                                        required />
+                                        <div class="invalid-feedback">
+                                            Please enter Price in Rs/- here!
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                    </div>
+
+                    <div class="d-flex justify-content-between ms-3 me-3 mb-1">
+                        <input type="submit"
+                            ng-disabled="newBookForm.bookid.$invalid || newBookForm.bname.$invalid || newBookForm.aname.$invalid || newBookForm.description.$invalid || newBookForm.price.$invalid"
+                            class="btn custom-secondary-bg-color bg-success text-white btn-sm" ng-click="addbook()">
+                        <input type="reset" class="btn btn-danger btn-sm">
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</main>
