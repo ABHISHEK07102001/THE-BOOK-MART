@@ -8,7 +8,7 @@ app.config(function($routeProvider){
     $routeProvider
 
     // .when("/",{
-    //     templateUrl : "/KitaabGhar/index.html"
+    //     templateUrl : "index.html"
     // })
 
     .when("/book",{
@@ -36,13 +36,17 @@ app.config(function($routeProvider){
         controller : "addnewbook.controller"
     })
 
+    .when("/auth",{
+        templateUrl:"/RegistrationFormValidation/RegistrationForm.html"
+    })
+
     .otherwise({
         template : `<strong> The Content is not available</strong>`
     });
 
 });
 
-app.run(($rootScope, $http, $location) => {
+app.run(($rootScope) => {
     $rootScope.myData = [
         {bookId:1,bookName:"Town Planning",url:"",authorName:"Rangwala",description:"A text book for Law students",price:90.00,categories:"Law"},
         {bookId:2,bookName:"Anna Karenina ", url:"",authorName:"Leo Tolstoy ",description:"A text book for engineering students",price:89.10,categories:"Engineering"},
@@ -66,3 +70,4 @@ app.run(($rootScope, $http, $location) => {
     ];
 
 });
+

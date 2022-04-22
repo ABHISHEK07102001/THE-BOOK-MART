@@ -14,7 +14,9 @@
                         <h5 class="custom-secondary-color text-white">Fill Book Information</h5>
                     </div>
                     <div class="card-body">
-                        <form name="newBookForm" novalidate>
+
+                        <form name="newBookForm" ng-submit="addnewbook()" novalidate>
+
                             <div class="row">
                                 <div class="col-md-9">
                                     <div class="row mb-2">
@@ -136,21 +138,22 @@
                                             Please enter Price in Rs/- here!
                                         </div>
                                     </div>
-                                </div>
-                                
+                                </div>                                
                             </div>
-                    </div>
+                             &nbsp;
+                            <div class="d-flex justify-content-between ms-3 me-3 mb-1">
+                                <button type="submit"
+                                   ng-disabled="newBookForm.bookid.$invalid || newBookForm.bname.$invalid || newBookForm.aname.$invalid || newBookForm.description.$invalid || newBookForm.price.$invalid"
+                                   class="btn custom-secondary-bg-color bg-success text-white btn-sm" > Save </button>
 
-                    <div class="d-flex justify-content-between ms-3 me-3 mb-1">
-                        <input type="submit"
-                            ng-disabled="newBookForm.bookid.$invalid || newBookForm.bname.$invalid || newBookForm.aname.$invalid || newBookForm.description.$invalid || newBookForm.price.$invalid"
-                            class="btn custom-secondary-bg-color bg-success text-white btn-sm" ng-click="addbook()">
-                        <input type="reset" class="btn btn-danger btn-sm">
+                                <input type="reset" class="btn btn-danger btn-sm">
+                            </div>
+
+                        </form>
+
                     </div>
-                    </form>
-                </div>
-            </div>
+               </div>
+           </div>
         </div>
-    </div>
     </div>
 </main>

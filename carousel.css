@@ -2,14 +2,12 @@
 -------------------------------------------------- */
 /* Padding below the footer and lighter body text */
 
-body {
-  margin: 0px;
-  padding: 0px;
-}
-
 
 /* CUSTOMIZE THE CAROUSEL
 -------------------------------------------------- */
+.cursor:hover{
+  cursor:auto;  
+}
 
 section{
   padding: 10px;
